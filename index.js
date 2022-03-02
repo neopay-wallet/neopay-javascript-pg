@@ -48,22 +48,3 @@ const NeoPayPaymentGateway = {
         window.location.href = url;
     }
 }
-
-// Example of usage
-async function checkout() {
-    await NeoPayPaymentGateway.pay({
-        neo_MerchantCode: 'concung',
-        neo_PaymentMethod: ["WALLET", "ATM", "CC"],
-        neo_Currency: 'VND',
-        neo_Locale: 'vi',
-        neo_Version: '1',
-        neo_Command: 'PAY',
-        neo_Amount: 100000,
-        neo_MerchantTxnID: 'T23343243',
-        neo_OrderID: 'DH23343243',
-        neo_OrderInfo: `Thanh toán ĐH DH23343243`,
-        neo_Title: 'Thanh toán',
-        neo_ReturnURL: "https://merchant-domain.com/cart/23343243/checkout",
-        neo_AgainURL: "https://merchant-domain.com/cart/23343243/checkout"
-    }, '123456');
-}
